@@ -1,0 +1,65 @@
+<p>{{title}}</p>
+
+<img src="../assets/img/EdonationImage.png">
+
+<p>Donor Registration</p>
+<form #loginform="ngForm" (ngSubmit)="loginUser">
+<div class="mb-3 row">
+    <label for="inputDonorName" class="col-sm-2 col-form-label">Donorname</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" name="inputdonarname" [(ngModel)]="user.donorname">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputUsername" [(ngModel)]="user.username">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" [(ngModel)]="user.password">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputEmail" [(ngModel)]="user.emailid">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputPhoneNumber" [(ngModel)]="user.phonenumber">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control-plaintext" id="inputAddress" [(ngModel)]="user.address">
+    </div>
+  </div>
+  <div>
+    <button class="mb 3" type="submit" class="btn btn-primary">Submit</button>
+   </div>
+     
+<a href="#top" onclick="document.getElementById('data')"> Double click for Donor Details </a>
+<div id="data" style="visibility:visible;" onload="document.getElementById('data')">
+
+<table id="data" style="visibility:visible;">
+  
+    <th *ngFor="let col of displayedColumns">
+      {{col}}
+    </th>
+  
+  <tr *ngFor="let row of rows">
+    <td> {{row.DonorId}} </td>
+    <td> {{row.NGOId}} </td>
+    <td> {{row.DonationType}} </td>
+    <td> {{row.Amount}} </td>
+    <td> {{row.Date}} </td>
+  </tr>
+</table>
+</div>
+</form>
